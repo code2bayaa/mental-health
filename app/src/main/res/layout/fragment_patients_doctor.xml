@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".patientsDoctor">
+
+    <LinearLayout
+            android:layout_width = "match_parent"
+            android:layout_height = "match_parent"
+            android:backgroundTint="@color/mentalBackground"
+            android:layout_gravity="center"
+            android:orientation = "vertical">
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/text_margin"
+                android:text="Mental Patients"
+                android:id = "@+id/mental_patients"/>
+
+        <ListView
+                android:id = "@+id/profile_patients_list"
+                android:layout_width = "wrap_content"
+                android:layout_height = "match_parent"
+                android:divider = "#000"
+                android:dividerHeight = "1dp"
+                android:footerDividersEnabled = "false"
+                android:headerDividersEnabled = "false"/>
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

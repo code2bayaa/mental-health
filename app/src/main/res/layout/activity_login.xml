@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        tools:context=".login">
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#fff"
+            android:text="@string/wordTheme"
+            android:textColor="@color/mentalTheme"
+            android:textSize="24sp"
+            android:drawableRight="@drawable/ic_mental"
+            android:textStyle="bold"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="103dp"
+            tools:layout_editor_absoluteY="56dp" />
+
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#fff"
+            android:text="@string/login"
+            android:textColor="@color/mentalTheme"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="103dp"
+            tools:layout_editor_absoluteY="114dp" />
+
+    <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/loginEmail"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/email"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="-16dp"
+            tools:layout_editor_absoluteY="165dp"
+            app:helperText="required*"
+            app:helperTextTextColor="@color/red">
+
+        <com.google.android.material.textfield.TextInputEditText
+
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:inputType="textEmailAddress">
+
+        </com.google.android.material.textfield.TextInputEditText>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/loginPassword"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/password"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="215dp"
+            tools:ignore="MissingConstraints">
+
+        <com.google.android.material.textfield.TextInputEditText
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="textPassword">
+
+        </com.google.android.material.textfield.TextInputEditText>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+            android:id="@+id/logIn_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/mentalTheme"
+            android:text="@string/login"
+            android:textColor="#fff"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="-26dp"
+            tools:layout_editor_absoluteY="273dp" />
+
+    <TextView
+            android:id="@+id/logIn_sign"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/go_to_sign_up"
+            android:textColor="@color/mentalTheme"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="86dp"
+            tools:layout_editor_absoluteY="345dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

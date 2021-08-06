@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/mobile_navigation2"
+        app:startDestination="@+id/profileDoctor">
+
+    <fragment
+            android:id="@+id/profileDoctor"
+            android:name="com.example.mental.profileDoctor"
+            android:label="@string/menu_home"
+            tools:layout="@layout/fragment_profile_doctor" />
+
+    <fragment
+            android:id="@+id/patientsDoctor"
+            android:name="com.example.mental.patientsDoctor"
+            android:label="@string/menu_gallery"
+            tools:layout="@layout/fragment_patients_doctor" />
+
+    <fragment
+            android:id="@+id/casesDoctor"
+            android:name="com.example.mental.casesDoctor"
+            android:label="@string/menu_gallery"
+            tools:layout="@layout/fragment_cases_doctor" />
+
+    <fragment
+            android:id="@+id/signOut"
+            android:name="com.example.mental.sign_out"
+            android:label="@string/menu_slideshow"
+            tools:layout="@layout/fragment_sign_out" />
+</navigation>
