@@ -17,15 +17,4 @@
             android:label="@string/menu_gallery"
             tools:layout="@layout/fragment_patients_doctor" />
 
-    <fragment
-            android:id="@+id/casesDoctor"
-            android:name="com.example.mental.casesDoctor"
-            android:label="@string/menu_gallery"
-            tools:layout="@layout/fragment_cases_doctor" />
-
-    <fragment
-            android:id="@+id/signOut"
-            android:name="com.example.mental.sign_out"
-            android:label="@string/menu_slideshow"
-            tools:layout="@layout/fragment_sign_out" />
 </navigation>

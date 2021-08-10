@@ -47,7 +47,7 @@
 
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="300dp"
-                android:layout_height="55dp"
+                android:layout_height="wrap_content"
                 android:hint="@string/email"
                 android:layout_gravity="center"
                 tools:ignore="MissingConstraints"
@@ -67,7 +67,7 @@
                 android:id="@+id/loginPassword"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="300dp"
-                android:layout_height="55dp"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:hint="@string/password"
                 tools:layout_editor_absoluteY="456dp"

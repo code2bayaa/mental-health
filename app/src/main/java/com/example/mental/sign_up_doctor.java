@@ -20,7 +20,7 @@ public class sign_up_doctor extends AppCompatActivity {
 
     private TextInputEditText w_address, biography, certification;
     Button m_sign_med_button, m_back;
-    private static final String ROOT_URL = "http://192.168.0.22/mental/";
+    private static final String ROOT_URL = "http://172.16.3.90/mental/";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

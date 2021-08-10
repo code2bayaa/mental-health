@@ -68,23 +68,23 @@ public class PatientAdapter implements android.widget.ListAdapter {
                 public void onClick(View v) {
                 }
             });
-            TextView title = convertView.findViewById(R.id.patient_name);
-            TextView medicine = convertView.findViewById(R.id.patient_age);
-            TextView analysis = convertView.findViewById(R.id.patient_email);
-            TextView date = convertView.findViewById(R.id.patient_email);
-            TextView sickness = convertView.findViewById(R.id.patient_telephone);
+            TextView title = convertView.findViewById(R.id.doctor_name);
+            TextView medicine = convertView.findViewById(R.id.patient_medicine);
+            TextView analysis = convertView.findViewById(R.id.patient_analysis);
+            TextView date = convertView.findViewById(R.id.record_date);
+            TextView sickness = convertView.findViewById(R.id.patient_sick);
             TextView height = convertView.findViewById(R.id.patient_height);
             TextView weight = convertView.findViewById(R.id.patient_weight);
             TextView symptoms = convertView.findViewById(R.id.patient_symptoms);
-            ImageView image = convertView.findViewById(R.id.patient_Img);
+            ImageView image = convertView.findViewById(R.id.doctor_Img);
 
             title.setText(subjectData.getDoctorName());
             date.setText(subjectData.getDate());
             medicine.setText(subjectData.getMedication());
             analysis.setText(subjectData.getAnalysis());
             sickness.setText(subjectData.getSickness());
-            height.setText((int)subjectData.getHeight());
-            weight.setText((int)subjectData.getWeight());
+            height.setText(""+subjectData.getHeight());
+            weight.setText(""+subjectData.getWeight());
 
             String[] symptomsArr = subjectData.getSymptoms().split(",");
             String symptomsAll = "";
@@ -92,10 +92,10 @@ public class PatientAdapter implements android.widget.ListAdapter {
                 symptomsAll += Html.fromHtml(symptom + "<br>");
             }
 
-            symptoms.setText(Html.fromHtml("<b>SYMPTOMS</b><br>")+""+symptomsAll);
+            symptoms.setText(symptomsAll);
 
             Picasso.with(context)
-                    .load("http://192.168.0.22/mentalImgs/" + subjectData.getDoctorImage())
+                    .load("http://172.16.3.90/mentalImgs/" + subjectData.getDoctorImage())
                     .into(image);
         }
         return convertView;

@@ -7,7 +7,7 @@ import retrofit2.http.Headers;
 import retrofit2.http.POST;
 
 public interface patientAPI {
-    String BASE_URL = "http://192.168.0.22/mental/";
+    String BASE_URL = "http://172.16.3.90/mental/";
     @Headers("Accept: application/json")
     @FormUrlEncoded
     @POST("getPatient.php")

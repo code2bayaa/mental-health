@@ -20,7 +20,7 @@ import retrofit2.converter.scalars.ScalarsConverterFactory;
 
 public class patientsTreatment extends AppCompatActivity {
 
-    private static final String ROOT_URL = "http://192.168.0.22/mental/";
+    private static final String ROOT_URL = "http://172.16.3.90/mental/";
     private TextInputEditText medicine,sickness,analysis;
     private Button addRecord,treatP,recordP;
 

@@ -111,11 +111,11 @@ public class CustomAdapter extends ArrayList<patientsData> implements android.wi
         }
 
         holder.title.setText(subjectData.getName());
-        holder.age.setText(subjectData.getAge());
+        holder.age.setText(""+subjectData.getAge());
         holder.email.setText(subjectData.getEmail());
         holder.telephone.setText(subjectData.getTelephone());
-        holder.height.setText((int) subjectData.getHeight());
-        holder.weight.setText((int) subjectData.getWeight());
+        holder.height.setText(""+subjectData.getHeight());
+        holder.weight.setText(""+subjectData.getWeight());
         holder.date.setText(subjectData.getDate()+""+getCount());
 
         String[] symptomsArr = subjectData.getSymptoms().split("^");
@@ -124,10 +124,10 @@ public class CustomAdapter extends ArrayList<patientsData> implements android.wi
             symptomsAll += fromHtml(symptom + "<br>");
         }
 
-        holder.symptoms.setText(fromHtml("<b>SYMPTOMS</b><br>")+""+symptomsAll);
+        holder.symptoms.setText(symptomsAll);
 
         Picasso.with(context)
-                .load("http://192.168.0.22/mentalImgs/" + subjectData.getImage())
+                .load("http://172.16.3.90/mentalImgs/" + subjectData.getImage())
                 .into(holder.image);
 
         return convertView;

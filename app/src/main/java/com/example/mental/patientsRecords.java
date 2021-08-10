@@ -4,11 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.os.AsyncTask;
 import android.os.Bundle;
-import android.text.Html;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -22,8 +18,6 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.ArrayList;
 
 import retrofit2.Call;
@@ -43,12 +37,9 @@ public class patientsRecords extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_patients_records);
 
-        list = (ListView) findViewById(R.id.profile_patients_list);
-        patientName = (TextView) findViewById(R.id.treat_patient_name);
-        patientAge = (TextView) findViewById(R.id.treat_patient_age);
+        list = (ListView) findViewById(R.id.treat_patient_list);
         treatP = (Button) findViewById(R.id.treat_patient_button);
         recordP = (Button) findViewById(R.id.record_button);
-        patientImg = (ImageView) findViewById(R.id.passportPatient);
 
         teleportData();
 
@@ -80,7 +71,6 @@ public class patientsRecords extends AppCompatActivity {
             @Override
             public void onResponse(Call<String> call, Response<String> response) {
                 //progressBar.setVisibility(View.GONE);
-                //mentalPatients.setText(response.body());
 
                 if (response.isSuccessful()) {
                     if (response.body() != null) {
@@ -115,12 +105,6 @@ public class patientsRecords extends AppCompatActivity {
                                     Toast.makeText(getApplicationContext(), "Patient has no prior medical records", Toast.LENGTH_SHORT).show();
                                 }
 
-                                JSONObject profile = new JSONObject(data.getString("info"));
-
-                                patientName.setText(Html.fromHtml("<b>NAME</b><br>")+""+profile.getString("name"));
-                                patientAge.setText(Html.fromHtml("<b>AGE</b><br>")+""+profile.getString("age"));
-                                patientsRecords.LoadImage loadImage = new patientsRecords.LoadImage(patientImg);
-                                loadImage.execute("http://192.168.0.22/mentalImgs/" + profile.getString("image"));
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -146,31 +130,7 @@ public class patientsRecords extends AppCompatActivity {
 
     }
 
-    @SuppressLint("StaticFieldLeak")
-    private class LoadImage extends AsyncTask<String, Void, Bitmap> {
-        ImageView passport;
-        public LoadImage(ImageView passport){
 
-            this.passport = passport;
-        }
-        @Override
-        protected Bitmap doInBackground(String...strings){
-            String urlLink = strings[0];
-            Bitmap bitmap = null;
-
-            try {
-                InputStream inputStream = new java.net.URL(urlLink).openStream();
-                bitmap = BitmapFactory.decodeStream(inputStream);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            return bitmap;
-        }
-        @Override
-        protected void onPostExecute(Bitmap bitmap){
-            passport.setImageBitmap(bitmap);
-        }
-    }
 
     private void plotValues(ArrayList<patientData> data){
 

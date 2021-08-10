@@ -96,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
         RequestQueue queue = Volley.newRequestQueue(MainActivity.this);
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST,
-                "http://192.168.0.22/mental/login.php?email="+email+"&password="+password, new Response.Listener<String>() {
+                "http://172.16.3.90/mental/login.php?email="+email+"&password="+password, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
 

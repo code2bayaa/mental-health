@@ -5,7 +5,6 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -80,14 +79,14 @@ public class profilePatient extends Fragment {
                             String message = data.getString("message");
                             if(message.equals("Success!")) {
                                 JSONObject profile = new JSONObject(data.getString("data"));
-                                emailTxt.setText(Html.fromHtml("<b>EMAIL</b><br>")+""+profile.getString("email"));
-                                nameTxt.setText(Html.fromHtml("<b>NAME</b><br>")+""+profile.getString("name"));
-                                telephoneTxt.setText(Html.fromHtml("<b>TELEPHONE</b><br>")+""+profile.getString("telephone"));
-                                ageTxt.setText(Html.fromHtml("<b>AGE</b><br>")+""+profile.getString("age"));
-                                homeTxt.setText(Html.fromHtml("<b>HOME</b><br>")+""+profile.getString("address"));
+                                emailTxt.setText(profile.getString("email"));
+                                nameTxt.setText(profile.getString("name"));
+                                telephoneTxt.setText(profile.getString("telephone"));
+                                ageTxt.setText(profile.getString("age"));
+                                homeTxt.setText(profile.getString("address"));
 
                                 LoadImage loadImage = new LoadImage(passport);
-                                loadImage.execute("http://192.168.0.22/mentalImgs/" + profile.getString("image"));
+                                loadImage.execute("http://172.16.3.90/mentalImgs/" + profile.getString("image"));
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();

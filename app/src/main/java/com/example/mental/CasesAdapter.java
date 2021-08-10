@@ -80,11 +80,11 @@ public class CasesAdapter implements android.widget.ListAdapter {
             ImageView image = convertView.findViewById(R.id.patient_cases_Img);
 
             title.setText(subjectData.getName());
-            age.setText(subjectData.getAge());
+            age.setText(""+subjectData.getAge());
             email.setText(subjectData.getEmail());
             telephone.setText(subjectData.getTelephone());
-            height.setText((int) subjectData.getHeight());
-            weight.setText((int) subjectData.getWeight());
+            height.setText(""+subjectData.getHeight());
+            weight.setText(""+subjectData.getWeight());
             date.setText(subjectData.getDate());
             sickness.setText(subjectData.getUniqueRecord());
 
@@ -94,10 +94,10 @@ public class CasesAdapter implements android.widget.ListAdapter {
                 symptomsAll += Html.fromHtml(symptom + "<br>");
             }
 
-            symptoms.setText(Html.fromHtml("<b>SYMPTOMS</b><br>")+""+symptomsAll);
+            symptoms.setText(symptomsAll);
 
             Picasso.with(context)
-                    .load("http://192.168.0.22/mentalImgs/" + subjectData.getImage())
+                    .load("http://172.16.3.90/mentalImgs/" + subjectData.getImage())
                     .into(image);
         }
         return convertView;

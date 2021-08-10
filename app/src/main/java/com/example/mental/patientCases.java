@@ -124,7 +124,6 @@ public class patientCases extends Fragment {
     private void plotValues(ArrayList<patientsData> data){
 
         CasesAdapter casesAdapter = new CasesAdapter(getContext(), data);
-        //ListAdapter customAdapter = new ListAdapter(this, R.layout.fragment_profile_doctor, data);
 
         list.setAdapter(casesAdapter);
     }

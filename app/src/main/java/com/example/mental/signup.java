@@ -36,7 +36,7 @@ import retrofit2.converter.scalars.ScalarsConverterFactory;
 
 public class signup extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
-    private static final String ROOT_URL = "http://192.168.0.22/mental/";
+    private static final String ROOT_URL = "http://172.16.3.90/mental/";
     private TextInputEditText mEmail;
     private TextInputEditText mPassword;
     private String mCheck, clickedImg;

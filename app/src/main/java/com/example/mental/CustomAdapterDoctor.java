@@ -107,7 +107,7 @@ public class CustomAdapterDoctor extends ArrayList<doctorsData> implements andro
         }
 
         holder.title.setText(subjectData.getName());
-        holder.age.setText((int)subjectData.getAge());
+        holder.age.setText(""+subjectData.getAge());
         holder.email.setText(subjectData.getEmail());
         holder.telephone.setText(subjectData.getTelephone());
         holder.address.setText(subjectData.getAddress());
@@ -116,7 +116,7 @@ public class CustomAdapterDoctor extends ArrayList<doctorsData> implements andro
         holder.certification.setText(subjectData.getcertification());
 
         Picasso.with(context)
-                .load("http://192.168.0.22/mentalImgs/" + subjectData.getImage())
+                .load("http://172.16.3.90/mentalImgs/" + subjectData.getImage())
                 .into(holder.image);
 
         return convertView;

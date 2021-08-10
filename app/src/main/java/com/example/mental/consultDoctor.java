@@ -19,7 +19,7 @@ import retrofit2.converter.scalars.ScalarsConverterFactory;
 
 public class consultDoctor extends AppCompatActivity {
 
-    private static final String ROOT_URL = "http://192.168.0.22/mental/";
+    private static final String ROOT_URL = "http://172.16.3.90/mental/";
     private TextInputEditText symptoms,height,weight;
     private Button addSymptom,consultD;
     private String symptomsAll;
@@ -48,7 +48,7 @@ public class consultDoctor extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if((!weight.getText().toString().isEmpty()) && (!height.getText().toString().isEmpty()) && (!symptomsAll.isEmpty())){
+                if((!weight.getText().toString().isEmpty()) && (!height.getText().toString().isEmpty()) && (symptomsAll != null)){
 
                     SharedPreferences pref = getSharedPreferences("doctor", Context.MODE_PRIVATE);
                     String doctor = pref.getString("doctor", null);
@@ -85,7 +85,7 @@ public class consultDoctor extends AppCompatActivity {
                     });
 
                 }else {
-                    if (symptomsAll.isEmpty())
+                    if (symptomsAll == null)
                         Toast.makeText(getApplicationContext(), "Please add any symptom", Toast.LENGTH_SHORT).show();
 
                     if (weight.getText().toString().isEmpty())

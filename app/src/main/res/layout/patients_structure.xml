@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/mentalBackground"
+        android:orientation="vertical">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:backgroundTint="@color/white"
+            android:orientation="horizontal">
+
+    <ImageView
+            android:id="@+id/patient_Img"
+            android:layout_width="200dp"
+            android:layout_height="250dp"
+            tools:ignore="RtlSymmetry" />
+
+    <LinearLayout
+            android:layout_width="200dp"
+            android:layout_height="250dp"
+            android:backgroundTint="@color/white"
+            android:orientation="vertical"
+            android:id="@+id/patientInfo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.976"
+            app:layout_constraintVertical_bias="0.108">
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:background="@color/textBackground"
+                android:text="@string/n"/>
+
+        <TextView
+                android:id="@+id/patient_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15sp" />
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:background="@color/textBackground"
+                android:text="@string/a"/>
+
+        <TextView
+                android:id="@+id/patient_age"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15sp" />
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:background="@color/textBackground"
+                android:text="@string/e"/>
+
+        <TextView
+                android:id="@+id/patient_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15sp" />
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:background="@color/textBackground"
+                android:text="@string/t"/>
+
+        <TextView
+                android:id="@+id/patient_telephone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15sp" />
+
+    </LinearLayout>
+
+    </LinearLayout>
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/white"
+            android:orientation="horizontal"
+            android:id="@+id/linearLayout">
+
+        <LinearLayout
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+            <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:background="@color/textBackground"
+                        android:text="@string/h"/>
+
+            <TextView
+                    android:id="@+id/patient_height"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp" />
+
+        </LinearLayout>
+        <LinearLayout
+                android:layout_width="170dp"
+                android:layout_marginStart="10dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+            <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:background="@color/textBackground"
+                        android:text="@string/w"/>
+
+            <TextView
+                    android:id="@+id/patient_weight"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:background="@color/textBackground"
+            android:text="@string/s"/>
+
+    <TextView
+            android:id="@+id/patient_symptoms"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintVertical_bias="0.499" />
+
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:background="@color/textBackground"
+            android:text="@string/d"/>
+
+    <TextView
+            android:id="@+id/patient_date"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintVertical_bias="0.499" />
+
+    <Button
+            android:id="@+id/treat_button"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:backgroundTint="@color/mentalTheme"
+            android:text="@string/Treat"
+            android:textColor="#fff"
+            tools:layout_editor_absoluteX="0dp"
+            android:layout_gravity="center"/>
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>
+
+
