@@ -3,7 +3,6 @@ package com.example.mental;
 import android.annotation.SuppressLint;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.Html;
@@ -30,10 +29,9 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.scalars.ScalarsConverterFactory;
 
-public class profileDoctor extends Fragment {
+public class profilePatient extends Fragment {
 
-    private OnFragmentInteractionListener mListener;
-    TextView emailTxt,nameTxt,telephoneTxt,ageTxt,specialTxt,biographyTxt,workTxt,homeTxt;
+    TextView emailTxt,nameTxt,telephoneTxt,ageTxt,homeTxt;
     ListView list;
     ImageView passport;
 
@@ -42,18 +40,15 @@ public class profileDoctor extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_profile_doctor, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_profile_patient, container, false);
 
         //INITIALIZE VIEWS
-        emailTxt = (TextView) rootView.findViewById(R.id.emailTxt);
-        biographyTxt = (TextView) rootView.findViewById(R.id.biographyTxt);
-        nameTxt = (TextView) rootView.findViewById(R.id.nameTxt);
-        telephoneTxt = (TextView) rootView.findViewById(R.id.telephoneTxt);
-        ageTxt = (TextView) rootView.findViewById(R.id.ageTxt);
-        specialTxt = (TextView) rootView.findViewById(R.id.specialTxt);
-        homeTxt = (TextView) rootView.findViewById(R.id.homeTxt);
-        workTxt = (TextView) rootView.findViewById(R.id.workTxt);
-        passport = (ImageView) rootView.findViewById(R.id.passport);
+        emailTxt = (TextView) rootView.findViewById(R.id.emailTxt_patient);
+        nameTxt = (TextView) rootView.findViewById(R.id.nameTxt_patient);
+        telephoneTxt = (TextView) rootView.findViewById(R.id.telephoneTxt_patient);
+        ageTxt = (TextView) rootView.findViewById(R.id.ageTxt_patient);
+        homeTxt = (TextView) rootView.findViewById(R.id.homeTxt_patient);
+        passport = (ImageView) rootView.findViewById(R.id.passport_patient);
         teleportData();
         return rootView;
     }
@@ -66,7 +61,7 @@ public class profileDoctor extends Fragment {
                 .baseUrl(profileAPI.BASE_URL)
                 .addConverterFactory(ScalarsConverterFactory.create())
                 .build();
-        profileAPI api = retrofit.create(profileAPI.class);
+        profilePatientAPI api = retrofit.create(profilePatientAPI.class);
         Call<String> call = api.getStrings(permit,user);
         call.enqueue(new Callback<String>() {
             @SuppressLint("SetTextI18n")
@@ -86,13 +81,10 @@ public class profileDoctor extends Fragment {
                             if(message.equals("Success!")) {
                                 JSONObject profile = new JSONObject(data.getString("data"));
                                 emailTxt.setText(Html.fromHtml("<b>EMAIL</b><br>")+""+profile.getString("email"));
-                                specialTxt.setText(Html.fromHtml("<b>CERTIFICATION</b><br>")+""+profile.getString("certification"));
                                 nameTxt.setText(Html.fromHtml("<b>NAME</b><br>")+""+profile.getString("name"));
-                                biographyTxt.setText(Html.fromHtml("<b>BIOGRAPHY</b><br>")+""+profile.getString("biography"));
                                 telephoneTxt.setText(Html.fromHtml("<b>TELEPHONE</b><br>")+""+profile.getString("telephone"));
                                 ageTxt.setText(Html.fromHtml("<b>AGE</b><br>")+""+profile.getString("age"));
                                 homeTxt.setText(Html.fromHtml("<b>HOME</b><br>")+""+profile.getString("address"));
-                                workTxt.setText(Html.fromHtml("<b>WORK</b><br>")+""+profile.getString("w_address"));
 
                                 LoadImage loadImage = new LoadImage(passport);
                                 loadImage.execute("http://192.168.0.22/mentalImgs/" + profile.getString("image"));
@@ -145,7 +137,4 @@ public class profileDoctor extends Fragment {
         }
     }
 
-    public interface OnFragmentInteractionListener {
-        public void onFragmentInteraction(Uri uri);
-    }
 }

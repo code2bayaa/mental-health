@@ -18,13 +18,11 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-import static android.text.Html.fromHtml;
 
-
-public class CustomAdapter extends ArrayList<patientsData> implements android.widget.ListAdapter {
-    ArrayList<patientsData> data;
+public class CustomAdapterDoctor extends ArrayList<doctorsData> implements android.widget.ListAdapter {
+    ArrayList<doctorsData> data;
     Context context;
-    public CustomAdapter(int a, Context context, ArrayList<patientsData> data) {
+    public CustomAdapterDoctor(int a, Context context, ArrayList<doctorsData> data) {
         super(data);
         this.data = data;
         this.context = context;
@@ -61,14 +59,14 @@ public class CustomAdapter extends ArrayList<patientsData> implements android.wi
     }
 
     public View getView(int position, View convertView, ViewGroup parent) {
-        patientsData subjectData = data.get(position);
+        doctorsData subjectData = data.get(position);
 
         ViewHolder holder = null;
 
         if(convertView == null) {
 
             LayoutInflater layoutInflater = LayoutInflater.from(context);
-            convertView = layoutInflater.inflate(R.layout.patients_structure, null);
+            convertView = layoutInflater.inflate(R.layout.doctors_structure, null);
             convertView.setOnClickListener(new View.OnClickListener() {
                
                 public void onClick(View v) {
@@ -78,53 +76,44 @@ public class CustomAdapter extends ArrayList<patientsData> implements android.wi
 
             holder = new ViewHolder();
 
-             holder.title = (TextView)convertView.findViewById(R.id.patient_name);
-             holder.age = (TextView)convertView.findViewById(R.id.patient_age);
-             holder.email = (TextView)convertView.findViewById(R.id.patient_email);
-             holder.date = (TextView)convertView.findViewById(R.id.patient_date);
-             holder.telephone = (TextView)convertView.findViewById(R.id.patient_telephone);
-             holder.height = (TextView)convertView.findViewById(R.id.patient_height);
-             holder.weight = (TextView)convertView.findViewById(R.id.patient_weight);
-             holder.symptoms = (TextView)convertView.findViewById(R.id.patient_symptoms);
-             holder.image = (ImageView)convertView.findViewById(R.id.patient_Img);
-             holder.treatP = (Button)convertView.findViewById(R.id.treat_button);
+             holder.title = (TextView)convertView.findViewById(R.id.nameTxt_doctor);
+             holder.age = (TextView)convertView.findViewById(R.id.ageTxt_doctor);
+             holder.email = (TextView)convertView.findViewById(R.id.emailTxt_doctor);
+             holder.biography = (TextView)convertView.findViewById(R.id.biographyTxt_doctor);
+             holder.telephone = (TextView)convertView.findViewById(R.id.telephoneTxt_doctor);
+             holder.certification = (TextView)convertView.findViewById(R.id.specialTxt_doctor);
+             holder.work = (TextView)convertView.findViewById(R.id.workTxt_doctor);
+             holder.address = (TextView)convertView.findViewById(R.id.homeTxt_doctor);
+             holder.image = (ImageView)convertView.findViewById(R.id.passport_doctor);
+             holder.consultB = (Button)convertView.findViewById(R.id.consult_button);
             convertView.setTag(holder);
-            holder.treatP.setTag(position);
-            holder.treatP.setOnClickListener(new View.OnClickListener() {
+            holder.consultB.setTag(position);
+            holder.consultB.setOnClickListener(new View.OnClickListener() {
                                              @Override
                                              public void onClick(View view) {
                                                  String patientE = subjectData.getEmail();
-                                                 String recordE = subjectData.getUniqueRecord();
 
-                                                 SharedPreferences pref = context.getSharedPreferences("patient", Context.MODE_PRIVATE);
+                                                 SharedPreferences pref = context.getSharedPreferences("doctor", Context.MODE_PRIVATE);
                                                  SharedPreferences.Editor edit = pref.edit();
-                                                 edit.putString("patient", patientE);
-                                                 edit.putString("record", recordE);
+                                                 edit.putString("doctor", patientE);
                                                  edit.commit();
 
                                                  Toast.makeText(context,"Please wait...",Toast.LENGTH_SHORT).show();
 
-                                                 context.startActivity(new Intent(context, patientsRecords.class));                                             }
+                                                 context.startActivity(new Intent(context, consultDoctor.class));                                             }
                                          });
         }else{
             holder = (ViewHolder) convertView.getTag();
         }
 
         holder.title.setText(subjectData.getName());
-        holder.age.setText(subjectData.getAge());
+        holder.age.setText((int)subjectData.getAge());
         holder.email.setText(subjectData.getEmail());
         holder.telephone.setText(subjectData.getTelephone());
-        holder.height.setText((int) subjectData.getHeight());
-        holder.weight.setText((int) subjectData.getWeight());
-        holder.date.setText(subjectData.getDate()+""+getCount());
-
-        String[] symptomsArr = subjectData.getSymptoms().split("^");
-        String symptomsAll = "";
-        for(String symptom: symptomsArr){
-            symptomsAll += fromHtml(symptom + "<br>");
-        }
-
-        holder.symptoms.setText(fromHtml("<b>SYMPTOMS</b><br>")+""+symptomsAll);
+        holder.address.setText(subjectData.getAddress());
+        holder.work.setText(subjectData.getwAddress());
+        holder.biography.setText(subjectData.getbiography());
+        holder.certification.setText(subjectData.getcertification());
 
         Picasso.with(context)
                 .load("http://192.168.0.22/mentalImgs/" + subjectData.getImage())
@@ -137,13 +126,13 @@ public class CustomAdapter extends ArrayList<patientsData> implements android.wi
         TextView title;
         TextView age;
         TextView email;
-        TextView date;
+        TextView certification;
         TextView telephone;
-        TextView height;
-        TextView weight;
-        TextView symptoms;
+        TextView address;
+        TextView work;
+        TextView biography;
         ImageView image;
-        Button treatP;
+        Button consultB;
     }
 
     public int getItemViewType(int position) {

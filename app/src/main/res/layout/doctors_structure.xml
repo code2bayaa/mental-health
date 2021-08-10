@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView
+<androidx.appcompat.widget.LinearLayoutCompat
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/wallpaper"
-        tools:context=".profileDoctor">
+        android:orientation="vertical">
 
 
     <LinearLayout
@@ -24,14 +24,13 @@
     <ImageView
             android:layout_width="200dp"
             android:layout_height="310dp"
-            android:id="@+id/passport"
+            android:id="@+id/passport_doctor"
             android:contentDescription="@string/doctorImg" />
 
         <LinearLayout
                 android:layout_width="200dp"
                 android:layout_height="310dp"
-                android:orientation="vertical"
-                android:backgroundTint="@color/white">
+                android:orientation="vertical">
 
             <TextView
                     android:layout_width="match_parent"
@@ -41,8 +40,8 @@
 
             <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/nameTxt" />
+                    android:layout_height="25dp"
+                    android:id="@+id/nameTxt_doctor" />
 
             <TextView
                     android:layout_width="match_parent"
@@ -52,8 +51,8 @@
 
             <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/ageTxt" />
+                    android:layout_height="25dp"
+                    android:id="@+id/ageTxt_doctor" />
 
             <TextView
                     android:layout_width="match_parent"
@@ -63,8 +62,8 @@
 
             <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/emailTxt" />
+                    android:layout_height="25dp"
+                    android:id="@+id/emailTxt_doctor" />
 
             <TextView
                     android:layout_width="match_parent"
@@ -74,8 +73,8 @@
 
             <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/telephoneTxt" />
+                    android:layout_height="25dp"
+                    android:id="@+id/telephoneTxt_doctor" />
 
         </LinearLayout>
     </LinearLayout>
@@ -84,14 +83,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:backgroundTint="@color/white"
-            android:id="@+id/linearLayout2"
+            android:id="@+id/linearLayout_doctor"
             tools:ignore="MissingConstraints">
 
         <LinearLayout
-                android:layout_width = "200dp"
-                android:layout_height = "wrap_content"
-                android:orientation = "vertical">
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
             <TextView
                     android:layout_width="match_parent"
@@ -100,16 +98,15 @@
                     android:text="@string/h"/>
 
             <TextView
-                    android:id="@+id/homeTxt"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:textSize="15sp" />
-
+                    android:layout_height="25dp"
+                    android:id="@+id/homeTxt_doctor" />
         </LinearLayout>
         <LinearLayout
-                android:layout_width = "200dp"
-                android:layout_height = "wrap_content"
-                android:orientation = "vertical">
+                android:layout_width="200dp"
+                android:layout_marginStart="10dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
             <TextView
                     android:layout_width="match_parent"
@@ -118,11 +115,9 @@
                     android:text="@string/w"/>
 
             <TextView
-                    android:id="@+id/workTxt"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:textSize="15sp" />
-
+                    android:layout_height="25dp"
+                    android:id="@+id/workTxt_doctor" />
         </LinearLayout>
     </LinearLayout>
 
@@ -135,7 +130,7 @@
     <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/specialTxt" />
+            android:id="@+id/specialTxt_doctor" />
 
     <TextView
             android:layout_width="match_parent"
@@ -146,8 +141,17 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/biographyTxt" />
+        android:id="@+id/biographyTxt_doctor" />
 
+    <Button
+            android:id="@+id/consult_button"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:backgroundTint="@color/mentalTheme"
+            android:text="@string/consult"
+            android:textColor="#fff"
+            tools:layout_editor_absoluteX="0dp"
+            android:layout_gravity="center"/>
 
     </LinearLayout>
-</androidx.core.widget.NestedScrollView>
+</androidx.appcompat.widget.LinearLayoutCompat>

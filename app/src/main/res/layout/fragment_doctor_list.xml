@@ -3,7 +3,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".patientsDoctor"
+        tools:context=".doctorList"
         android:background="@drawable/wallpaper">
 
     <LinearLayout
@@ -17,12 +17,12 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:textSize="30sp"
-                android:text="@string/mp"
-                android:id = "@+id/mental_patients"
+                android:text="@string/md"
+                android:id = "@+id/doctor_lists"
                 tools:layout_editor_absoluteY="156dp"/>
 
         <ListView
-                android:id = "@+id/profile_patients_list"
+                android:id = "@+id/doctor_patients_list"
                 android:layout_width = "match_parent"
                 android:layout_height = "wrap_content"
                 android:divider = "#000"

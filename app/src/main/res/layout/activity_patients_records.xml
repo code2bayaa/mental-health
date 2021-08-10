@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".patientsRecords"
+        android:background="@drawable/wallpaper">
+
+    <LinearLayout
+            android:layout_width = "match_parent"
+            android:layout_height = "match_parent"
+            android:background="@color/mentalBackground"
+            android:orientation = "vertical">
+
+        <LinearLayout
+                android:layout_width = "match_parent"
+                android:layout_height = "60dp"
+                android:orientation = "horizontal">
+
+            <Button
+                    android:id="@+id/treat_patient_button"
+                    android:layout_width="150dp"
+                    android:layout_marginLeft="35dp"
+                    android:layout_height="match_parent"
+                    android:backgroundTint="@color/mentalTheme"
+                    android:text="@string/Treat"
+                    android:textColor="#fff" />
+
+            <Button
+                    android:id="@+id/record_button"
+                    android:layout_width="150dp"
+                    android:layout_marginLeft="35dp"
+                    android:layout_height="match_parent"
+                    android:backgroundTint="@color/mentalTheme"
+                    android:text="@string/record"
+                    android:textColor="#fff" />
+
+        </LinearLayout>
+        <LinearLayout
+                android:layout_width = "match_parent"
+                android:layout_height = "250dp"
+                android:orientation = "horizontal">
+
+            <ImageView
+                    android:layout_width="200dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/passportPatient"
+                    android:contentDescription="@string/patientImg" />
+
+            <LinearLayout
+                    android:layout_width = "match_parent"
+                    android:layout_height = "250dp"
+                    android:orientation = "vertical">
+
+                <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:background="@color/textBackground"
+                        android:text="@string/n"/>
+
+                <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/text_margin"
+                        android:id = "@+id/treat_patient_name"/>
+
+                <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:background="@color/textBackground"
+                        android:text="@string/a"/>
+
+                <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/text_margin"
+                        android:id="@+id/treat_patient_age" />
+            </LinearLayout>
+        </LinearLayout>
+        <ListView
+                android:id="@+id/treat_patient_list"
+                android:layout_width="wrap_content"
+                android:layout_height="219dp"
+                android:divider="#000"
+                android:dividerHeight="1dp"
+                android:footerDividersEnabled="false"
+                android:headerDividersEnabled="false" />
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

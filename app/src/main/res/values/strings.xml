@@ -32,7 +32,7 @@
     <string name="menu_tools">Tools</string>
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
-    <string name="title_activity_patient">patient</string>
+    <string name="title_activity_patient">Patient</string>
     <string name="rev">Back</string>
     <string name="go_to_logIn">Go back to <u>Log In</u></string>
     <string name="img">CLICK HERE TO SELECT IMAGE FROM GALLERY</string>
@@ -130,5 +130,32 @@
     <string name="title_activity_daktari">daktari</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="patientImg">Mental Patient</string>
+    <string name="doctorImg">Mental Doctor</string>
+    <string name="Treat">Treat Patient</string>
+    <string name="consult">Consult Doctor</string>
+    <string name="symptom">Tell us how you feel? One symptom. Click Add</string>
+    <string name="height">Your Height</string>
+    <string name="weight">Your Weight</string>
+    <string name="record">Patient Records</string>
+    <string name="analysis">Medical Analysis</string>
+    <string name="medicine">Prescribe Medication</string>
+    <string name="sickness">Patient Sickness</string>
+    <string name="cases"><u>Handled Cases</u></string>
+    <string name="mp"><u>Mental Patients</u></string>
+    <string name="md"><u>Mental Health Doctors</u></string>
+    <string name="n"><u>Name</u></string>
+    <string name="a"><u>Age</u></string>
+    <string name="e"><u>Email</u></string>
+    <string name="t"><u>Telephone</u></string>
+    <string name="h"><u>Home</u></string>
+    <string name="w"><u>Work</u></string>
+    <string name="c"><u>Certificate</u></string>
+    <string name="b"><u>Biography</u></string>
+    <string name="d"><u>Date</u></string>
+    <string name="s"><u>Symptoms</u></string>
+    <string name="si"><u>Sickness</u></string>
+    <string name="m"><u>Medicine</u></string>
+    <string name="an"><u>Analysis</u></string>
 
 </resources>

@@ -1,6 +1,7 @@
 package com.example.mental;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -123,9 +124,12 @@ public class doctor extends AppCompatActivity implements NavigationView.OnNaviga
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new patientsDoctor()).commit();
                 break;
-            case R.id.sign_out_doctor:
+            case R.id.cases_doctor:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new sign_out()).commit();
+                        new patientCases()).commit();
+                break;
+            case R.id.sign_out_doctor:
+                startActivity(new Intent(this, MainActivity.class));
                 break;
         }
 

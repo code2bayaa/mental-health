@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/profile_patient"
+            android:title="Profile"
+            android:icon="@drawable/ic_profile" />
+
+        <item android:id="@+id/doctors_list"
+            android:title="Doctors"
+            android:icon="@drawable/ic_patients" />
+
+        <item android:id="@+id/medical_patient"
+            android:title="Medical Files"
+            android:icon="@drawable/ic_cases" />
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item android:id="@+id/sign_out_doctor"
+                android:title="Sign Out"
+                android:icon="@drawable/ic_signout" />
+        </menu>
+    </item>
+</menu>

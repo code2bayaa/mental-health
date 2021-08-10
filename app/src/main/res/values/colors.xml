@@ -10,5 +10,6 @@
     <color name="mentalTheme">#1FF333</color>
     <color name="wordTheme">#E11A1B1B</color>
     <color name="red">#AD051F</color>
-    <color name="mentalBackground">#B5B1B2</color>
+    <color name="mentalBackground">#C4E8E3E4</color>
+    <color name="textBackground">#E1959394</color>
 </resources>

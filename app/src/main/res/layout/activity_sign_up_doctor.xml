@@ -6,112 +6,120 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_gravity="center"
+        android:background="@drawable/wallpaper"
         tools:context=".sign_up_doctor">
 
-    <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#fff"
-            android:text="@string/wordTheme"
-            android:textColor="@color/mentalTheme"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            app:drawableEndCompat="@drawable/ic_mental_theme"
-            android:gravity="center"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="103dp"
-            tools:layout_editor_absoluteY="156dp" />
-
-
-    <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#fff"
-            android:text="@string/signUp"
-            android:textColor="@color/mentalTheme"
-            android:textSize="14sp"
-            android:textStyle="bold"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="103dp"
-            tools:layout_editor_absoluteY="214dp" />
-
-    <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/sign_med_biography"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+    <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/biography"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="-16dp"
-            tools:layout_editor_absoluteY="265dp">
+            android:layout_height="464dp"
+            android:orientation="vertical"
+            android:background="@color/mentalBackground">
 
-        <com.google.android.material.textfield.TextInputEditText
-
+        <TextView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:inputType="text"
-                android:id="@+id/med_biography"/>
-    </com.google.android.material.textfield.TextInputLayout>
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"
+                android:text="@string/wordTheme"
+                android:textColor="@color/mentalTheme"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                app:drawableEndCompat="@drawable/ic_mental_theme"
+                android:gravity="center"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="103dp"
+                tools:layout_editor_absoluteY="156dp" />
 
-    <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/signMedCertification"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/certification"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="315dp">
 
-        <com.google.android.material.textfield.TextInputEditText
-
+        <TextView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:inputType="text"
-                android:id="@+id/med_certification"/>
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"
+                android:text="@string/signUp"
+                android:gravity="center"
+                android:textColor="@color/mentalTheme"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="103dp"
+                tools:layout_editor_absoluteY="214dp" />
 
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/signMedWorkAddress"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/w_address"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="365dp">
-
-        <com.google.android.material.textfield.TextInputEditText
-
+        <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/sign_med_biography"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:inputType="text"
-                android:id="@+id/med_address"/>
-    </com.google.android.material.textfield.TextInputLayout>
+                android:layout_height="wrap_content"
+                android:hint="@string/biography"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="-16dp"
+                tools:layout_editor_absoluteY="265dp">
 
-    <Button
-            android:id="@+id/sign_med_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/mentalTheme"
-            android:text="@string/signUp"
-            android:textColor="#fff"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="-16dp"
-            tools:layout_editor_absoluteY="425dp" />
+            <com.google.android.material.textfield.TextInputEditText
 
-    <Button
-            android:id="@+id/sign_back_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#000"
-            android:text="@string/rev"
-            android:textColor="#fff"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="-16dp"
-            tools:layout_editor_absoluteY="525dp" />
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="text"
+                    android:id="@+id/med_biography" />
+        </com.google.android.material.textfield.TextInputLayout>
 
+        <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/signMedCertification"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/certification"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="315dp">
 
+            <com.google.android.material.textfield.TextInputEditText
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="text"
+                    android:id="@+id/med_certification" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/signMedWorkAddress"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/w_address"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="365dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="text"
+                    android:id="@+id/med_address" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+                android:id="@+id/sign_med_button"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:backgroundTint="@color/mentalTheme"
+                android:text="@string/signUp"
+                android:textColor="#fff"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteY="425dp" />
+
+        <Button
+                android:id="@+id/sign_back_button"
+                android:layout_width="350dp"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/mentalTheme"
+                android:text="@string/rev"
+                android:textColor="#fff"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="-16dp"
+                tools:layout_editor_absoluteY="525dp" />
+
+    </LinearLayout>
 </LinearLayout>

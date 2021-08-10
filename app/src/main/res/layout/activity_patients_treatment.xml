@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="@drawable/wallpaper"
+tools:context=".patientsTreatment">
+
+<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/mentalBackground"
+        android:orientation="vertical">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="horizontal"
+            tools:ignore="MissingConstraints">
+
+        <Button
+                android:id="@+id/goRecord"
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                android:backgroundTint="@color/mentalTheme"
+                android:text="@string/record"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteY="32dp"
+                tools:layout_editor_absoluteX="193dp" />
+
+        <Button
+                android:id="@+id/goTreat"
+                android:layout_width="200dp"
+                android:layout_marginLeft="5dp"
+                android:layout_height="match_parent"
+                android:backgroundTint="@color/mentalTheme"
+                android:text="@string/Treat"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteY="32dp"
+                tools:layout_editor_absoluteX="5dp" />
+
+    </LinearLayout>
+    <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/treat_sickness"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="410dp"
+            android:layout_height="97dp"
+            android:hint="@string/sickness"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteY="217dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/treat_sickness_edit"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="text">
+
+        </com.google.android.material.textfield.TextInputEditText>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/treat_medication"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="403dp"
+            android:layout_height="84dp"
+            android:hint="@string/medicine"
+            tools:layout_editor_absoluteY="337dp"
+            tools:layout_editor_absoluteX="5dp"
+            tools:ignore="MissingConstraints">
+
+        <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/treat_medication_edit"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="text">
+
+        </com.google.android.material.textfield.TextInputEditText>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/treat_analysis"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="408dp"
+            android:layout_height="86dp"
+            android:hint="@string/analysis"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="439dp"
+            tools:ignore="MissingConstraints">
+
+        <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/treat_analysis_edit"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="text">
+
+        </com.google.android.material.textfield.TextInputEditText>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+            android:id="@+id/treat_record_button"
+            android:layout_width="match_parent"
+            android:layout_height="99dp"
+            android:backgroundTint="@color/mentalTheme"
+            android:text="@string/Treat"
+            tools:layout_editor_absoluteY="541dp"
+            tools:layout_editor_absoluteX="3dp"
+            tools:ignore="MissingConstraints" />
+
+</LinearLayout>
+</LinearLayout>

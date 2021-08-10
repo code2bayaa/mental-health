@@ -1,6 +1,11 @@
 package com.example.mental;
 
+import android.app.WallpaperManager;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -21,6 +26,7 @@ import com.google.android.material.textfield.TextInputEditText;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -42,6 +48,8 @@ public class MainActivity extends AppCompatActivity {
 
         mLogIn = findViewById(R.id.logIn_sign);
         m_login_button = findViewById(R.id.logIn_button);
+
+        //setWallpaper();
 
         mLogIn.setOnClickListener(v -> startActivity(new Intent(MainActivity.this,signup.class)));
 
@@ -70,6 +78,17 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    private void setWallpaper() {
+        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.wallpaper);
+        WallpaperManager manager = WallpaperManager.getInstance(getApplicationContext());
+        try{
+            manager.setBitmap(bitmap);
+            Toast.makeText(this, "Wallpaper set!", Toast.LENGTH_SHORT).show();
+        } catch (IOException e) {
+            Toast.makeText(this, "Error!", Toast.LENGTH_SHORT).show();
+        }
+    }
+
     private void logIn( final String email, final String password) {
 
         //mProgress.setVisibility(View.VISIBLE);
@@ -95,6 +114,12 @@ public class MainActivity extends AppCompatActivity {
                         // Finish
                         //finish();
                         // Start activity dashboard
+                        SharedPreferences pref = getSharedPreferences("user", Context.MODE_PRIVATE);
+                        SharedPreferences.Editor edit = pref.edit();
+                        edit.putString("user", mEmail.getText().toString());
+
+// Commit the changes
+                        edit.commit();
                         MainActivity.userSession.putString("user", mEmail.getText().toString());
                         if(user.equals("Patient")) {
                             startActivity(new Intent(MainActivity.this, patients.class));
